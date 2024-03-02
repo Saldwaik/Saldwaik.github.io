@@ -34,19 +34,14 @@
   <div id="map"></div>
   <!-- Add a link to the Leaflet JavaScript library so you can reference it for building your map -->
   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-  <!-- Add a link to the jQuery JavaScript library so you can leverage ajax methods to load your data -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <!-- for statistics, classifications -->
-  <script src="https://unpkg.com/simple-statistics@7.4.0/dist/simple-statistics.min.js"></script>
-  <!-- apex charts -->
-  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
 
   <!-- All JavaScript goes inside the script tags below -->
   <script>
     // define map options
     const mapOptions = {
       zoomSnap: 0.5,  // this allows fractional zooming
-      center: [31.9045, 35.2045], // center the map on the coordinates for Palestine
+      center: [31.9045, 35.2045], // center the map on the coordinates for Ramallah
       zoom: 17.5, // set the initial zoom
     };
 
@@ -55,12 +50,12 @@
 
 
 
-    // add a base map to the map
-L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-  subdomains: 'abcd',
-  maxZoom: 20
-}).addTo(map);
+       // add a base map to the map
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    	maxZoom: 19,
+    	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
 
  // Add the GeoJSON layer
         fetch('wasteContainer.json')
