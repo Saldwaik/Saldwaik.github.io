@@ -57,35 +57,7 @@
     }).addTo(map);
 
 
- // Add the GeoJSON layer
-        fetch('wasteContainer.json')
-            .then(response => response.json())
-            .then(data => {
-                L.geoJSON(data, {
-                    onEachFeature: function (feature, layer) {
-                        // Add popup with feature properties
-                        if (feature.properties && feature.properties.popupContent) {
-                            layer.bindPopup(feature.properties.popupContent);
-                        }
-                    }
-                }).addTo(map);
-            })
-            .catch(error => console.error('Error loading GeoJSON:', error));
 
- // Add the GeoJSON layer
-        fetch('RamallahZones.json')
-            .then(response => response.json())
-            .then(data => {
-                L.geoJSON(data, {
-                    onEachFeature: function (feature, layer) {
-                        // Add popup with feature properties
-                        if (feature.properties && feature.properties.popupContent) {
-                            layer.bindPopup(feature.properties.popupContent);
-                        }
-                    }
-                }).addTo(map);
-            })
-            .catch(error => console.error('Error loading GeoJSON:', error));
 
   </script>
 </body>
