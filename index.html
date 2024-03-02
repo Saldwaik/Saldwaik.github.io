@@ -62,7 +62,7 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
   maxZoom: 20
 }).addTo(map);
 
-        // Add the GeoJSON layer
+ // Add the GeoJSON layer
         fetch('wasteContainer.json')
             .then(response => response.json())
             .then(data => {
@@ -76,7 +76,8 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
                 }).addTo(map);
             })
             .catch(error => console.error('Error loading GeoJSON:', error));
-        // Add the Zones GeoJSON layer
+
+ // Add the GeoJSON layer
         fetch('RamallahZones.json')
             .then(response => response.json())
             .then(data => {
