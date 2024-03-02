@@ -8,8 +8,6 @@
   <title>Ramallah Waste Containers</title>
   <!-- Add a link to the Leaflet CSS library so you can reference it for styling your map -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
-    <!-- Leaflet JavaScript -->
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <!-- All the CSS code goes inside the style tags below -->
   <style>
     /* style the body */
@@ -30,12 +28,10 @@
 </head>
 
 <body>
-   <!-- the map -->
+  <!-- the map -->
   <div id="map"></div>
   <!-- Add a link to the Leaflet JavaScript library so you can reference it for building your map -->
   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-
-
   <!-- All JavaScript goes inside the script tags below -->
   <script>
     // define map options
@@ -48,20 +44,14 @@
     // define the map with the options above
     const map = L.map("map", mapOptions);
 
-
-
-       // add a base map to the map
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    	maxZoom: 19,
-    	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-
-
-
+    // add a base map to the map
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+  subdomains: 'abcd',
+  maxZoom: 20
+}).addTo(map);
 
   </script>
 </body>
 
 </html>
-
-
