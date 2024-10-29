@@ -73,7 +73,7 @@
         },
         onEachFeature: function(feature, layer) {
           layer.on('click', function(e) {
-            alert("Zone: " + feature.properties.NAME_ENGLI + "\nMAIL_CODE: " + feature.properties.MAIL_CODE);
+            alert("Zone: " + feature.properties.NAME_ENGLI + "\nMAIL_CODE: " + feature.properties.MAIL_CODE + "\nالمنطقة: " + feature.properties.NAME);
           });
         }
       }).addTo(map);
